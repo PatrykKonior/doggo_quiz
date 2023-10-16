@@ -164,6 +164,7 @@
         
     }
 
+
     // Function to load the data needed to display the quiz
     async function loadQuizData() {
         document.getElementById("image-frame").textContent = "Fetching doggo...";
@@ -175,12 +176,10 @@
         return [doggoImgUrl, correctBreed, breedChoices];
     }
 
-    // TODO 5
-    // Asynchronously call the loadQuizData() function,     
-    // Then call renderQuiz() with the returned imageUrl, correctAnswer, and choices 
+    const [imgUrl, correctAnswer, choices] = await loadQuizData();
+    renderQuiz(imgUrl, correctAnswer, choices);
+
     
     
-
-
   </script>
 </html>
